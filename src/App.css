@@ -224,3 +224,15 @@ kbd {
 .shortcut kbd { background: var(--color-key-chip); border-radius: 6px; }
 .step:focus,
 .answer h1:focus { outline: none; }
+.below-box { gap: 12px; }
+.hint { margin-left: auto; }
+
+.toast {
+  font-size: 15px;
+  color: var(--color-on-accent);
+  background: var(--color-text);
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.toast strong { margin-right: 6px; }

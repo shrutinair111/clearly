@@ -1,0 +1,15 @@
+:root {
+    --color-bg: #F7F5F0;
+    --color-surface: #FFFFFF;
+    --color-text: #1F2A24;
+    --color-text-muted: #4C5A52;
+    --color-accent: #3F6B52;
+    --color-on-accent: #FFFFFF;
+    --color-active-step: #E6EDFF;
+    --color-key-chip: #EEF0EE;
+    --color-border: #E2DED4;
+    --color-focus-ring: #1F4FD1;
+  
+    --font-body: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+    --font-key: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  }

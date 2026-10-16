@@ -1,0 +1,226 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--color-border);
+}
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 700;
+}
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-text);
+}
+
+.conversation {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 220px 16px 40px;
+}
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.muted {
+  color: var(--color-text-muted);
+  font-size: 19px;
+  margin: 0 0 28px;
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-text);
+  border-radius: 16px;
+  padding: 10px 10px 10px 20px;
+}
+.composer input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: var(--color-text);
+}
+.composer:focus-within {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+.send {
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.below-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.mode-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-active-step);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 6px 6px 14px;
+  cursor: pointer;
+}
+kbd {
+  font-family: var(--font-key);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--color-surface);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+.hint {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  margin: 0;
+}
+/* ---------- Answer (Screen 1) ---------- */
+.conversation:has(.answer) { padding-top: 40px; }
+
+.user-message {
+  margin: 0 0 20px auto;
+  max-width: 500px;
+  width: fit-content;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  padding: 14px 20px;
+  border-radius: 18px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 6px 14px 6px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #228B4D;
+}
+
+.answer h1 { font-size: 30px; margin: 0 0 16px; }
+
+.summary {
+  border-left: 4px solid var(--color-text);
+  padding-left: 16px;
+  margin-bottom: 20px;
+}
+.summary p { margin: 0; }
+.summary-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px !important;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.step {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+.step.active {
+  background: var(--color-active-step);
+  border: 3px solid var(--color-focus-ring);
+}
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.step-number {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  border: 1.5px solid var(--color-text);
+}
+.step.active .step-number {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border-color: var(--color-accent);
+}
+.step-title {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+.now-tag {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.step-body { margin: 12px 0 0; }
+
+.shortcut-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 28px;
+}
+.shortcut {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-text);
+  border-radius: 12px;
+  padding: 10px 16px 10px 12px;
+  cursor: pointer;
+}
+.shortcut kbd { background: var(--color-key-chip); border-radius: 6px; }
+.step:focus,
+.answer h1:focus { outline: none; }

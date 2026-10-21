@@ -383,3 +383,132 @@ kbd {
 .toast { min-width: 0; }
 .useful-tag { flex: none; white-space: nowrap; }
 .shortcuts-panel { min-height: calc(100vh - 77px); }
+
+/* ---------- Top bar button ---------- */
+.top-bar { justify-content: space-between; }
+.link-button {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  padding: 6px 4px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Focus moves to step titles and explanations; the active card already shows the ring */
+.step-title:focus,
+.step-body:focus { outline: none; }
+
+/* ---------- Welcome and setup ---------- */
+.conversation:has(.onboarding) { padding-top: 56px; }
+.onboarding h1 { font-size: 40px; line-height: 1.2; margin: 0 0 12px; }
+.onboarding h1:focus { outline: none; }
+.lead { font-size: 20px; margin: 0 0 20px; }
+.how-it-works {
+  margin: 0 0 32px;
+  padding: 20px 24px 20px 44px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mode-choice {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mode-choice legend {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 4px;
+}
+.step-count {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+.small { font-size: 16px; margin: 0 0 6px; }
+.choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+.choice.selected {
+  background: var(--color-active-step);
+  border: 3px solid var(--color-focus-ring);
+  padding: 16.5px 18.5px;
+}
+/* The real radio button stays for keyboards and screen readers, drawn as the number box */
+.choice input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.choice:has(input:focus-visible) {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+.choice-key {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-key);
+  font-weight: 700;
+  font-size: 20px;
+  border: 1.5px solid var(--color-text);
+}
+.choice.selected .choice-key {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+.choice-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+.choice-title { font-size: 22px; font-weight: 700; }
+.choice-desc { font-size: 17px; color: var(--color-text-muted); }
+.sample-button {
+  flex: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-text);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.onboarding-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+.onboarding-footer .send { font-size: 18px; padding: 12px 22px; }

@@ -157,7 +157,10 @@ export default function App() {
           </>
         ) : (
           <section className="answer" aria-labelledby="answer-title">
-            <p className="user-message">{asked}</p>
+            <p className="user-message">
+              <span className="visually-hidden">You asked: </span>
+              {asked}
+            </p>
 
             <p className="status">
               <span className="status-dot" aria-hidden="true" />
@@ -203,17 +206,37 @@ export default function App() {
             </ol>
 
             <div className="shortcut-bar">
-              <button type="button" className="shortcut" onClick={previousStep}>
-                <kbd>⌥B</kbd> Previous
+              <button
+                type="button"
+                className="shortcut"
+                onClick={previousStep}
+                aria-keyshortcuts="Alt+B"
+              >
+                <kbd aria-hidden="true">⌥B</kbd> Previous
               </button>
-              <button type="button" className="shortcut" onClick={nextStep}>
-                <kbd>⌥N</kbd> Next step
+              <button
+                type="button"
+                className="shortcut"
+                onClick={nextStep}
+                aria-keyshortcuts="Alt+N"
+              >
+                <kbd aria-hidden="true">⌥N</kbd> Next step
               </button>
-              <button type="button" className="shortcut" onClick={hearDetails}>
-                <kbd>⌥D</kbd> Details
+              <button
+                type="button"
+                className="shortcut"
+                onClick={hearDetails}
+                aria-keyshortcuts="Alt+D"
+              >
+                <kbd aria-hidden="true">⌥D</kbd> Details
               </button>
-              <button type="button" className="shortcut" onClick={repeatSummary}>
-                <kbd>⌥R</kbd> Repeat summary
+              <button
+                type="button"
+                className="shortcut"
+                onClick={repeatSummary}
+                aria-keyshortcuts="Alt+R"
+              >
+                <kbd aria-hidden="true">⌥R</kbd> Repeat summary
               </button>
             </div>
           </section>

@@ -236,3 +236,150 @@ kbd {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 .toast strong { margin-right: 6px; }
+/* ---------- Layout: conversation + optional shortcuts panel ---------- */
+.layout {
+  display: flex;
+  align-items: flex-start;
+}
+.layout > main { flex: 1; min-width: 0; }
+
+/* ---------- Streaming (Screen 2) ---------- */
+.status-dot.writing { background: var(--color-focus-ring); }
+.status-dot.paused { background: #B26B00; }
+.status-dot.stopped { background: var(--color-text-muted); }
+
+.step-writing {
+  margin-top: 12px;
+  background: var(--color-surface);
+  border: 1.5px dashed var(--color-text-muted);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.step-number.writing {
+  border-style: dashed;
+  border-color: var(--color-text-muted);
+  color: var(--color-text-muted);
+}
+.writing-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.writing-line {
+  display: block;
+  height: 14px;
+  width: 75%;
+  border-radius: 7px;
+  background: var(--color-active-step);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.writing-line.short { width: 50%; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .writing-line { animation: none; }
+}
+
+.shortcut-bar { flex-wrap: wrap; }
+
+/* ---------- Shortcuts panel (Screen 4) ---------- */
+.shortcuts-panel {
+  flex: none;
+  width: 360px;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border-left: 1.5px solid var(--color-border);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.panel-header h2 { font-size: 26px; margin: 0; }
+.panel-header h2:focus { outline: none; }
+.panel-close {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: transparent;
+  border: 1.5px solid var(--color-text);
+  border-radius: 10px;
+  padding: 6px 8px 6px 12px;
+  cursor: pointer;
+}
+.panel-close kbd { background: var(--color-key-chip); border-radius: 6px; }
+.panel-intro {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+.shortcut-group { border-radius: 14px; }
+.shortcut-group.useful {
+  background: var(--color-active-step);
+  padding: 14px 16px;
+}
+.shortcut-group h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.useful-tag {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.shortcut-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.shortcut-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+}
+.shortcut-list kbd {
+  flex: none;
+  width: 52px;
+  text-align: center;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-text);
+  border-radius: 8px;
+  padding: 3px 0;
+}
+
+/* Keep small labels on one line */
+.mode-chip { flex: none; white-space: nowrap; }
+.toast { min-width: 0; }
+.useful-tag { flex: none; white-space: nowrap; }
+.shortcuts-panel { min-height: calc(100vh - 77px); }
